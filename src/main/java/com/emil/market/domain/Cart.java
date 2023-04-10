@@ -19,7 +19,7 @@ public class Cart {
     private static final String SEQ_NAME = "cart_seq";
     @Id
     @GeneratedValue(generator = SEQ_NAME, strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME)
+    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME, allocationSize = 1)
     private long id;
     @OneToOne
     @JoinColumn(name = "user_id")

@@ -1,9 +1,13 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/market
     username: admin
     password: admin
+
+    #миграция с flyway
+  flyway:
+    baseline-on-migrate: true #чтобы не мигрировать вручную, без плагинов

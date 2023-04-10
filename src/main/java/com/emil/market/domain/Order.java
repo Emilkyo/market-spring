@@ -21,7 +21,7 @@ import java.util.List;
 @Table(name = "orders")
 public class Order {
     private static final String SEQ_NAME = "order_seq";
-    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME)
+    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME, allocationSize = 1)
     @GeneratedValue(generator = SEQ_NAME, strategy = GenerationType.SEQUENCE)
     @Id
     private long id;

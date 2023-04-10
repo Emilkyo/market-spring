@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "order_details")
 public class OrderDetails {
     private static final String SEQ_NAME = "order_details_seq";
-    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME)
+    @SequenceGenerator(sequenceName = SEQ_NAME, name = SEQ_NAME, allocationSize = 1)
     @GeneratedValue(generator = SEQ_NAME,strategy = GenerationType.SEQUENCE)
     @Id
     private long id;
