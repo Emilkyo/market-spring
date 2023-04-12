@@ -22,31 +22,23 @@ drop sequence if exists cart_seq
 drop sequence if exists category_seq
 drop sequence if exists order_details_seq
 drop sequence if exists order_seq
+drop sequence if exists product_seq
 drop sequence if exists user_seq
-create sequence cart_seq start with 1 increment by 1
-create sequence category_seq start with 1 increment by 1
-create sequence order_details_seq start with 1 increment by 1
-create sequence order_seq start with 1 increment by 1
-create sequence user_seq start with 1 increment by 1
-create table buckets_products
+create sequence cart_seq start with 1 increment by 1 create sequence category_seq start with 1 increment by 1 create sequence order_details_seq start with 1 increment by 1 create sequence order_seq start with 1 increment by 1 create sequence product_seq start with 1 increment by 1 create sequence user_seq start with 1 increment by 1 create table buckets_products
 (
     bucket_id  bigint not null,
     product_id bigint not null
-)
-    --CART:
-create table carts
+) create table carts
 (
     id      bigint not null,
     user_id bigint,
     primary key (id)
-)
-create table categories
+) create table categories
 (
     id    bigint not null,
     title varchar(255),
     primary key (id)
-)
-create table order_details
+) create table order_details
 (
     id         bigint not null,
     amount     numeric(38, 2),
@@ -54,8 +46,7 @@ create table order_details
     order_id   bigint,
     product_id bigint,
     primary key (id)
-)
-create table orders
+) create table orders
 (
     id           bigint not null,
     address      varchar(255),
@@ -65,25 +56,21 @@ create table orders
     updated_time timestamp(6),
     user_id      bigint,
     primary key (id)
-)
-create table orders_details
+) create table orders_details
 (
     order_id   bigint not null,
     details_id bigint not null
-)
-create table products
+) create table products
 (
     id    bigint not null,
     price numeric(38, 2),
     title varchar(255),
     primary key (id)
-)
-create table products_categories
+) create table products_categories
 (
     product_id  bigint not null,
     category_id bigint not null
-)
-create table users
+) create table users
 (
     id           bigint  not null,
     archived     boolean not null,

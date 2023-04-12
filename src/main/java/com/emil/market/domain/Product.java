@@ -17,11 +17,10 @@ import java.util.List;
 @Builder
 @Table(name = "products")
 public class Product {
-    private static final String SEQ_NAME = "cart_seq";
-
-    @Id
+    private static final String SEQ_NAME = "product_seq";
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME, allocationSize = 1)
+    @Id
     private Long id;
 
     private BigDecimal price;
